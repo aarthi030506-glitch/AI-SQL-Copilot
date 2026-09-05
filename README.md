@@ -8,44 +8,72 @@ The application uses **Google Gemini** to convert natural-language questions int
 
 ## ✨ Key Features
 
-- 🗣️ **Natural Language → SQL**
-  - Ask database questions using everyday language.
-  - Google Gemini generates the corresponding SQL query.
+### 🗣️ Natural Language → SQL
 
-- 🔐 **SQL Security Validation**
-  - Only `SELECT` queries are permitted.
-  - Blocks dangerous operations such as `DELETE`, `UPDATE`, `INSERT`, `DROP`, `ALTER`, `CREATE`, and `PRAGMA`.
-  - Prevents multiple SQL statements and dangerous SQLite functions.
+* Ask database questions using everyday language.
+* Google Gemini generates the corresponding SQL query.
 
-- 🔧 **Automatic SQL Correction**
-  - Detects SQL execution errors.
-  - Uses AI to generate a corrected query.
+### 🔐 SQL Security Validation
 
-- 📊 **Interactive Analytics**
-  - Displays query results in a structured table.
-  - Automatically generates visualizations when appropriate.
+* Only `SELECT` queries are permitted.
+* Blocks dangerous operations such as `DELETE`, `UPDATE`, `INSERT`, `DROP`, `ALTER`, `CREATE`, and `PRAGMA`.
+* Prevents multiple SQL statements and dangerous SQLite functions.
 
-- 💡 **AI-Generated Insights**
-  - Provides a natural-language explanation of query results.
+### 🔧 Automatic SQL Correction
 
-- 📥 **CSV Export**
-  - Download query results for further analysis.
+* Detects SQL execution errors.
+* Uses AI to generate a corrected query.
 
-- 💬 **Conversation History**
-  - Keeps previous questions and generated SQL visible during the session.
+### 📊 Interactive Analytics
 
-- 📈 **Dynamic Database Metrics**
-  - Displays live record counts from the database.
+* Displays query results in a structured table.
+* Automatically generates visualizations when appropriate.
 
-- 🟢 **Database Monitoring**
-  - Shows whether the SQLite database connection is working.
+### 💡 AI-Generated Insights
+
+* Provides a natural-language explanation of query results.
+
+### 📥 CSV Export
+
+* Download query results for further analysis.
+
+### 💬 Conversation History
+
+* Keeps previous questions and generated SQL visible during the session.
+
+### 📈 Dynamic Database Metrics
+
+* Displays live record counts from the database.
+
+### 🟢 Database Monitoring
+
+* Shows whether the SQLite database connection is working.
 
 ---
+
+## 🖥️ Project Screenshots
+
+### Dashboard
+
+![Dashboard](./screenshots/dashboard.png)
+
+### Analytics
+
+![Analytics](./screenshots/analytics.png)
+
+### Security Validation
+
+![Security Validation](./screenshots/security.png)
+
+---
+
 ## 🏗️ System Architecture
 
 The following architecture shows how the AI SQL Copilot processes a natural-language question, validates AI-generated SQL, executes safe queries, and presents results and insights.
 
 ![AI SQL Copilot System Architecture](./screenshots/architecture.png)
+
+---
 
 ## 🛠️ Technology Stack
 
@@ -54,11 +82,12 @@ The following architecture shows how the AI SQL Copilot processes a natural-lang
 | 🐍 **Python**        | Core programming language and application logic         |
 | 🎈 **Streamlit**     | Interactive web application interface                   |
 | 🗄️ **SQLite**       | Database storage and SQL query execution                |
-| 🤖 **Groq LLM**      | Converts natural-language questions into SQL queries    |
-| 🧠 **LangChain**     | AI workflow and prompt management                       |
+| 🤖 **Google Gemini** | Converts natural-language questions into SQL queries    |
 | 📊 **Pandas**        | Data processing and analysis                            |
 | 📈 **Plotly**        | Interactive data visualization                          |
 | 🔐 **Python-dotenv** | Secure management of API keys and environment variables |
+
+---
 
 ## 🧠 Key Technical Learnings
 
@@ -71,6 +100,8 @@ The following architecture shows how the AI SQL Copilot processes a natural-lang
 * Created interactive visualizations to make database insights easier to understand.
 * Learned how to manage API keys securely using **environment variables**.
 
+---
+
 ## 🚀 Future Improvements
 
 * Support additional databases such as **MySQL** and **PostgreSQL**.
@@ -82,8 +113,11 @@ The following architecture shows how the AI SQL Copilot processes a natural-lang
 * Enable users to download query results and visualizations.
 * Deploy the application using cloud platforms for scalable access.
 
+---
+
 ## 👩‍💻 Author
 
 **Aarthi**
 
 Chemical Engineering Student | Aspiring Data Analyst | AI & Data Enthusiast
+
