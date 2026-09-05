@@ -3,16 +3,24 @@ from dotenv import load_dotenv
 from google import genai
 from sql_runner import run_query
 from sql_validator import validate_sql
+import streamlit as st
 
-
-# Load variables from .env
 load_dotenv()
 
+# First try the local .env file
 api_key = os.getenv("GEMINI_API_KEY")
 
+# If not running with a local .env key, try Streamlit Secrets
 if not api_key:
-    raise ValueError("GEMINI_API_KEY was not found in .env")
+    try:
+        api_key = st.secrets["GEMINI_API_KEY"]
+    except Exception:
+        api_key = None
 
+if not api_key:
+    raise ValueError(
+        "GEMINI_API_KEY was not found. Configure it in .env or Streamlit Secrets."
+    )
 
 # Create Gemini client
 client = genai.Client(api_key=api_key)
