@@ -1,160 +1,89 @@
-\# 🤖 AI SQL Copilot
+# 🤖 AI SQL Copilot
 
+An AI-powered conversational SQL assistant that allows users to query a business database using natural language.
 
+The application uses **Google Gemini** to convert natural-language questions into SQL, validates the generated query for security, executes safe queries against a **SQLite database**, and presents the results through an interactive **Streamlit dashboard**.
 
-An AI-powered conversational SQL assistant that converts natural language questions into secure SQL queries and provides database insights through an interactive Streamlit dashboard.
+---
 
+## ✨ Key Features
 
+- 🗣️ **Natural Language → SQL**
+  - Ask database questions using everyday language.
+  - Google Gemini generates the corresponding SQL query.
 
-\## 🚀 Features
+- 🔐 **SQL Security Validation**
+  - Only `SELECT` queries are permitted.
+  - Blocks dangerous operations such as `DELETE`, `UPDATE`, `INSERT`, `DROP`, `ALTER`, `CREATE`, and `PRAGMA`.
+  - Prevents multiple SQL statements and dangerous SQLite functions.
 
+- 🔧 **Automatic SQL Correction**
+  - Detects SQL execution errors.
+  - Uses AI to generate a corrected query.
 
+- 📊 **Interactive Analytics**
+  - Displays query results in a structured table.
+  - Automatically generates visualizations when appropriate.
 
-\* 🗣️ Natural Language → SQL using Google Gemini
+- 💡 **AI-Generated Insights**
+  - Provides a natural-language explanation of query results.
 
-\* 🔐 Secure SQL validation — SELECT queries only
+- 📥 **CSV Export**
+  - Download query results for further analysis.
 
-\* 🔧 Automatic SQL correction
+- 💬 **Conversation History**
+  - Keeps previous questions and generated SQL visible during the session.
 
-\* 📊 Query results and visualizations
+- 📈 **Dynamic Database Metrics**
+  - Displays live record counts from the database.
 
-\* 📥 CSV export
+- 🟢 **Database Monitoring**
+  - Shows whether the SQLite database connection is working.
 
-\* 💡 AI-generated insights
+---
+## 🏗️ System Architecture
 
-\* 💬 Conversation history
+The following architecture shows how the AI SQL Copilot processes a natural-language question, validates AI-generated SQL, executes safe queries, and presents results and insights.
 
-\* 🟢 Database connection monitoring
+![AI SQL Copilot System Architecture](./screenshots/architecture.png)
 
+## 🛠️ Technology Stack
 
+| Technology           | Purpose                                                 |
+| -------------------- | ------------------------------------------------------- |
+| 🐍 **Python**        | Core programming language and application logic         |
+| 🎈 **Streamlit**     | Interactive web application interface                   |
+| 🗄️ **SQLite**       | Database storage and SQL query execution                |
+| 🤖 **Groq LLM**      | Converts natural-language questions into SQL queries    |
+| 🧠 **LangChain**     | AI workflow and prompt management                       |
+| 📊 **Pandas**        | Data processing and analysis                            |
+| 📈 **Plotly**        | Interactive data visualization                          |
+| 🔐 **Python-dotenv** | Secure management of API keys and environment variables |
 
-\## 🏗️ Architecture
+## 🧠 Key Technical Learnings
 
+* Learned how to integrate **Large Language Models (LLMs)** with structured databases.
+* Built a system that converts **natural-language questions into SQL queries**.
+* Implemented **SQL validation and safety checks** before executing AI-generated queries.
+* Worked with **SQLite databases** for storing and querying structured data.
+* Developed an interactive data application using **Streamlit**.
+* Used **Pandas** for data processing and analysis.
+* Created interactive visualizations to make database insights easier to understand.
+* Learned how to manage API keys securely using **environment variables**.
 
+## 🚀 Future Improvements
 
-```text
+* Support additional databases such as **MySQL** and **PostgreSQL**.
+* Add support for uploading custom datasets and automatically creating database tables.
+* Improve SQL validation with advanced security rules and query restrictions.
+* Add conversational memory to support follow-up questions.
+* Provide automatic chart recommendations based on query results.
+* Add user authentication and role-based access control.
+* Enable users to download query results and visualizations.
+* Deploy the application using cloud platforms for scalable access.
 
-User Question
+## 👩‍💻 Author
 
-&#x20;     ↓
+**Aarthi**
 
-Streamlit UI
-
-&#x20;     ↓
-
-Gemini LLM
-
-&#x20;     ↓
-
-SQL Generation
-
-&#x20;     ↓
-
-SQL Validation
-
-&#x20;     ↓
-
-SQLite Database
-
-&#x20;     ↓
-
-Results + Charts + AI Insights
-
-```
-
-
-
-\## 🛠️ Tech Stack
-
-
-
-\*\*Python | Streamlit | Google Gemini | SQLite | Pandas | SQL | Faker\*\*
-
-
-
-\## 🔐 Security
-
-
-
-Only safe `SELECT` queries are allowed. The application blocks operations such as:
-
-
-
-`DELETE` • `UPDATE` • `INSERT` • `DROP` • `ALTER` • `CREATE` • `PRAGMA`
-
-
-
-It also prevents multiple SQL statements and dangerous SQLite functions.
-
-
-
-\## 📊 Database
-
-
-
-The application uses a business database containing \*\*9,500+ records\*\* across employees, customers, suppliers, products, orders, and departments.
-
-
-
-\## 💡 Example Questions
-
-
-
-```text
-
-Which department has the highest average salary?
-
-
-
-Show the top 10 most expensive products.
-
-
-
-Show the number of orders by status.
-
-
-
-Which suppliers provide the most products?
-
-```
-
-
-
-\## 🎯 Objective
-
-
-
-Demonstrate the integration of \*\*Generative AI, Python, SQL, data analytics, and application security\*\* to make database analysis accessible through natural language.
-
-
-
-\## ▶️ Run
-
-
-
-```bash
-
-git clone https://github.com/aarthi030506-glitch/AI-SQL-Copilot.git
-
-cd AI-SQL-Copilot
-
-pip install -r requirements.txt
-
-streamlit run app.py
-
-```
-
-
-
-Create a `.env` file with your Gemini API key before running the application.
-
-
-
-\## 👩‍💻 Author
-
-
-
-\*\*Aarthi\*\* — AI \& Data Analytics Portfolio
-
-
-
+Chemical Engineering Student | Aspiring Data Analyst | AI & Data Enthusiast
